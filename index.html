@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Klub Bola — Situs Sederhana</title>
+  <meta name="description" content="Website statis tentang bola: berita singkat, galeri, video, dan profil pemain." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --accent:#ef4444; /* red */
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      background: linear-gradient(180deg,#071025 0%, #071829 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+    }
+
+    .container{max-width:1100px;margin:0 auto}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;background:transparent;border-radius:12px;margin-bottom:18px
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#ff8a65);
+      box-shadow:0 6px 20px rgba(0,0,0,0.6);
+    }
+    .logo svg{filter:drop-shadow(0 6px 18px rgba(0,0,0,0.6))}
+    h1{font-size:18px;margin:0}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    nav a:hover{color:#fff}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center;margin-bottom:20px
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);padding:20px;box-shadow:0 6px 30px rgba(2,6,23,0.6);
+    }
+    .intro h2{margin:0 0 6px 0}
+    .intro p{margin:0;color:var(--muted);line-height:1.5}
+
+    .stats{display:flex;gap:12px;margin-top:14px}
+    .stat{background:var(--glass);padding:8px 12px;border-radius:10px;text-align:center;min-width:90px}
+    .stat strong{display:block;font-size:18px}
+    .stat span{display:block;font-size:12px;color:var(--muted)}
+
+    .ball-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:12px}
+    .ball{width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff 0%, #f2f2f2 18%, #d6d6d6 40%, #111 41%);display:grid;place-items:center;box-shadow:inset -10px -8px 30px rgba(0,0,0,0.6),0 10px 30px rgba(0,0,0,0.5)}
+    .ball::after{content:'';width:220px;height:220px;border-radius:50%;background:conic-gradient(#000 0deg 40deg, #fff 40deg 80deg, #000 80deg 120deg,#fff 120deg 160deg,#000 160deg 200deg,#fff 200deg 240deg,#000 240deg 280deg,#fff 280deg 320deg,#000 320deg 360deg);opacity:0.12;transform:rotate(12deg)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .card h3{margin:0 0 8px 0}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;display:block}
+
+    .video{aspect-ratio:16/9;border-radius:10px;overflow:hidden}
+    .players{display:flex;gap:12px;flex-wrap:wrap}
+    .player{flex:1 1 160px;background:var(--card);padding:10px;border-radius:10px;text-align:center}
+    .player img{width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:8px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff8a65);color:#fff;text-decoration:none;font-weight:600}
+
+    footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .gallery img{height:120px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      .grid{grid-template-columns:1fr}
+      .brand h1{font-size:16px}
+      .logo{width:46px;height:46px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>
+          <!-- simple ball + star icon -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="white" opacity="0.12"/>
+            <path d="M12 3v4" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+            <path d="M6 8l3 2" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Portal Bola — Klub & Berita</h1>
+          <div style="color:var(--muted);font-size:13px">Semua tentang sepak bola: berita, foto, dan pemain</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#berita">Berita</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#pemain">Pemain</a>
+        <a href="#video">Video</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card intro">
+        <h2 id="berita">Selamat datang di Portal Bola</h2>
+        <p>Website sederhana ini dibuat untuk menampilkan informasi singkat tentang dunia sepak bola: skor contoh, berita pendek, galeri foto, profil pemain, dan video highlight. Cocok untuk latihan membuat website statis HTML + CSS.</p>
+
+        <div class="stats">
+          <div class="stat"><strong>3</strong><span>Artikel</span></div>
+          <div class="stat"><strong>12</strong><span>Foto</span></div>
+          <div class="stat"><strong>11K</strong><span>Pengunjung</span></div>
+        </div>
+
+        <div style="margin-top:14px">
+          <h3>Berita Terbaru</h3>
+          <div style="margin-top:10px">
+            <article class="card" style="padding:12px;margin-top:8px">
+              <h4 style="margin:0 0 6px 0">Derby Lokal: Kemenangan Tipis 2-1</h4>
+              <p style="margin:0;color:var(--muted);font-size:14px">Laporan singkat: pertandingan seru dengan gol di menit akhir. Fokus pada strategi sayap dan pressing tinggi.</p>
+            </article>
+            <article class="card" style="padding:12px;margin-top:8px">
+              <h4 style="margin:0 0 6px 0">Pemain Muda Bersinar</h4>
+              <p style="margin:0;color:var(--muted);font-size:14px">Talenta akademi memecahkan gol dan menarik perhatian pelatih tim utama.</p>
+            </article>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card ball-wrap">
+        <div class="ball" role="img" aria-label="Ilustrasi Bola Sepak"></div>
+        <a class="btn" href="#galeri">Lihat Galeri</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3 id="galeri">Galeri Foto</h3>
+      <p style="color:var(--muted);margin-bottom:12px">Beberapa momen dari lapangan (gambar contoh, bebas hak cipta dari sumber publik).</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1517927033932-b3d78e8f0d61?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Foto Sepak Bola 1">
+        <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Foto Sepak Bola 2">
+        <img src="https://images.unsplash.com/photo-1500733371096-17f0d03d2c8f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Foto Sepak Bola 3">
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h3 id="video">Video Highlight</h3>
+      <p style="color:var(--muted);margin-bottom:10px">Contoh embed video highlight (ganti VIDEO_ID dengan ID YouTube yang diinginkan).</p>
+      <div class="video">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h3 id="pemain">Profil Pemain</h3>
+      <div class="players" style="margin-top:10px">
+        <div class="player">
+          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Pemain A">
+          <strong>Andi Santoso</strong>
+          <div style="color:var(--muted);font-size:13px">Penyerang - Nomor 9</div>
+        </div>
+        <div class="player">
+          <img src="https://images.unsplash.com/photo-1540202404-5b68a8f0f1d9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Pemain B">
+          <strong>Rizal Pratama</strong>
+          <div style="color:var(--muted);font-size:13px">Gelandang - Nomor 6</div>
+        </div>
+        <div class="player">
+          <img src="https://images.unsplash.com/photo-1508606572321-901ea443707f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Pemain C">
+          <strong>Satria Putra</strong>
+          <div style="color:var(--muted);font-size:13px">Bek - Nomor 4</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2025 Portal Bola — Dibuat dengan ♥ oleh Kamu</div>
+      <div style="margin-top:6px;color:var(--muted);">Mau fitur lain? (live score, form contact, atau tema terang) beri tahu aku.</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -62,10 +62,41 @@
       color: darkred;
     }
 
+    .list-berita {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .item-berita {
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .item-berita:hover {
+      transform: translateY(-5px);
+    }
+
+    .item-berita h3 {
+      margin: 0;
+      color: #b30000;
+      font-size: 1.1rem;
+    }
+
+    .item-berita p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
+      margin-top: 15px;
     }
 
     .card {
@@ -75,6 +106,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
       text-align: center;
       transition: transform 0.2s;
+      padding-bottom: 10px;
     }
 
     .card:hover {
@@ -83,13 +115,45 @@
 
     .card img {
       width: 100%;
-      height: 250px;
+      height: 220px;
       object-fit: cover;
     }
 
     .card h3 {
-      margin: 10px 0;
+      margin: 10px 0 5px 0;
       color: #222;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .jadwal {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-top: 25px;
+    }
+
+    .jadwal h2 {
+      color: darkred;
+      margin-top: 0;
+    }
+
+    .jadwal ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .jadwal li {
+      background: #fafafa;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     footer {
@@ -113,63 +177,127 @@
     <a href="#pemain">Pemain</a>
     <a href="#pelatih">Pelatih</a>
     <a href="#staf">Staf</a>
+    <a href="#jadwal">Jadwal</a>
   </nav>
 
   <div class="container">
 
+    <!-- BERITA -->
     <section id="berita" class="berita">
       <h2>Berita Terkini</h2>
-      <p>Timnas Indonesia terus melakukan persiapan intensif menghadapi ronde ke-4 Kualifikasi Piala Dunia. 
-         Dengan skuad muda berbakat dan pemain berpengalaman, Garuda optimis melangkah lebih jauh. 
-         Dukungan penuh dari para suporter menjadi energi tambahan untuk perjuangan tim.</p>
+      <div class="list-berita">
+        <div class="item-berita">
+          <h3>Garuda Latihan Intensif Jelang Lawan Arab Saudi</h3>
+          <p>Timnas Indonesia fokus meningkatkan fisik dan strategi menghadapi Arab Saudi di ronde ke-4 Kualifikasi Piala Dunia.</p>
+        </div>
+        <div class="item-berita">
+          <h3>Patrick Kluivert Resmi Jadi Pelatih Kepala</h3>
+          <p>Mantan striker Belanda, Patrick Kluivert, ditunjuk sebagai pelatih Timnas Indonesia dengan kontrak hingga 2027.</p>
+        </div>
+        <div class="item-berita">
+          <h3>Jordi Cruyff Jadi Penasihat Teknis</h3>
+          <p>PSSI mengangkat Jordi Cruyff untuk membantu strategi dan filosofi permainan Timnas Indonesia.</p>
+        </div>
+        <div class="item-berita">
+          <h3>Skuad 32 Pemain Dipanggil untuk TC</h3>
+          <p>Pemain seperti Asnawi, Lilipaly, Marselino, hingga Struick dipanggil untuk pemusatan latihan di Bali.</p>
+        </div>
+        <div class="item-berita">
+          <h3>Rekor Buruk vs Jepang & Australia</h3>
+          <p>Indonesia belum pernah menang melawan Jepang dalam 44 tahun terakhir, juga selalu kalah dalam 5 laga terakhir lawan Australia.</p>
+        </div>
+        <div class="item-berita">
+          <h3>Suporter Jadi Kekuatan Tambahan</h3>
+          <p>Suporter Garuda diharapkan memenuhi stadion untuk memberi motivasi tambahan bagi Timnas Indonesia.</p>
+        </div>
+      </div>
     </section>
 
+    <!-- PEMAIN -->
     <section id="pemain">
       <h2>Pemain Timnas</h2>
       <div class="gallery">
         <div class="card">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Asnawi_Mangkualam.jpg" alt="Asnawi Mangkualam">
           <h3>Asnawi Mangkualam</h3>
-          <p>Kapten Timnas</p>
+          <p>Bek Kanan | Kapten Timnas</p>
         </div>
         <div class="card">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Witan_Sulaeman_2021.jpg" alt="Witan Sulaeman">
           <h3>Witan Sulaeman</h3>
-          <p>Gelandang Serang</p>
+          <p>Gelandang Serang | Persija Jakarta</p>
         </div>
         <div class="card">
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Egy_Maulana_Vikri_2019.jpg" alt="Egy Maulana">
           <h3>Egy Maulana</h3>
-          <p>Sayap Kiri</p>
+          <p>Sayap Kiri | Dewa United</p>
+        </div>
+        <div class="card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Marselino_Ferdinan_2022.jpg" alt="Marselino Ferdinan">
+          <h3>Marselino Ferdinan</h3>
+          <p>Gelandang Muda | KMSK Deinze</p>
         </div>
       </div>
     </section>
 
+    <!-- PELATIH -->
     <section id="pelatih">
       <h2>Pelatih Timnas</h2>
       <div class="gallery">
         <div class="card">
           <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Patrick_Kluivert_2016.jpg" alt="Patrick Kluivert">
           <h3>Patrick Kluivert</h3>
-          <p>Pelatih Kepala</p>
+          <p>Pelatih Kepala | Belanda</p>
         </div>
       </div>
+      <p style="margin-top:15px; font-size:0.95rem; line-height:1.6; text-align:justify;">
+        Menjelang ronde ke-4 Kualifikasi Piala Dunia 2026, Patrick Kluivert sebagai pelatih kepala Timnas Indonesia memimpin rapat bersama seluruh staf pelatih di Belanda. 
+        Ia fokus memperbaiki lini penyerangan yang masih kurang tajam, sekaligus memantau pemain-pemain Liga 1 agar mendapatkan data performa terkini sebelum menentukan skuad final.
+      </p>
     </section>
 
+    <!-- STAF -->
     <section id="staf">
-      <h2>Staf Pelatih</h2>
+      <h2>Staf Pelatih & Pendukung</h2>
       <div class="gallery">
         <div class="card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Sandro_Sakai_Coach.jpg" alt="Asisten Pelatih">
-          <h3>Sandro Sakai</h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Jordi_Cruyff.jpg" alt="Jordi Cruyff">
+          <h3>Jordi Cruyff</h3>
+          <p>Penasihat Teknis</p>
+        </div>
+        <div class="card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Denny_Landzaat.jpg" alt="Denny Landzaat">
+          <h3>Denny Landzaat</h3>
           <p>Asisten Pelatih</p>
         </div>
         <div class="card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Physiotherapist.jpg" alt="Fisioterapis">
-          <h3>Tim Medis</h3>
-          <p>Fisioterapis</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Gerald_Vanenburg.jpg" alt="Gerald Vanenburg">
+          <h3>Gerald Vanenburg</h3>
+          <p>Asisten Pelatih & Tim U-23</p>
+        </div>
+        <div class="card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Sumardji.jpg" alt="Sumardji">
+          <h3>Sumardji</h3>
+          <p>Manajer Tim</p>
         </div>
       </div>
+      <p style="margin-top:15px; font-size:0.95rem; line-height:1.6; text-align:justify;">
+        Jordi Cruyff selaku penasihat teknis memberikan masukan penting terkait strategi dan filosofi permainan Timnas, sekaligus meninjau sistem pembinaan usia muda agar sejalan dengan tim senior. 
+        Para asisten pelatih seperti Denny Landzaat dan Alex Pastoor aktif memantau Liga 1, bahkan terbang lebih awal ke Arab Saudi untuk menyiapkan akomodasi dan adaptasi sebelum skuad utama tiba. 
+        Staf kepelatihan lainnya, termasuk pelatih fisik dan analis video, berperan menjaga kondisi pemain agar siap menghadapi cuaca panas Timur Tengah serta menyiapkan laporan taktik dan hasil scouting lawan. 
+        Dengan sinergi ini, tim pelatih memastikan skuad Garuda tampil lebih siap menghadapi Arab Saudi maupun Irak.
+      </p>
+    </section>
+
+    <!-- JADWAL -->
+    <section id="jadwal" class="jadwal">
+      <h2>Jadwal & Hasil Terbaru</h2>
+      <ul>
+        <li>5 Juni 2025: Indonesia vs China – Stadion GBK</li>
+        <li>10 Juni 2025: Jepang vs Indonesia</li>
+        <li>Oktober 2025: Arab Saudi vs Indonesia – Putaran 4 Kualifikasi Piala Dunia 2026</li>
+        <li>Oktober 2025: Indonesia vs Irak – Putaran 4 Kualifikasi Piala Dunia 2026</li>
+      </ul>
     </section>
 
   </div>

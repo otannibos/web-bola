@@ -1,139 +1,189 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Timnas Indonesia — Persiapan Ronde 4 Kualifikasi Piala Dunia</title>
-  <meta name="description" content="Halaman khusus perkembangan dan persiapan Timnas Indonesia menuju Babak 4 Kualifikasi Piala Dunia FIFA 2026." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#042029;--card:#062935;--accent:#e83e2b;--muted:#9bb3bf;--glass:rgba(255,255,255,0.04);--radius:12px}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#021017 0%,#042029 60%);color:#eaf6f9;padding:24px}
-    .wrap{max-width:1100px;margin:0 auto}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#ff7a59,#c81d25);display:grid;place-items:center}
-    h1{margin:0;font-size:20px}
-    .sub{color:var(--muted);font-size:13px}
-    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
-
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:16px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-    .overview h2{margin:0 0 6px}
-    .overview p{margin:0;color:var(--muted);line-height:1.5}
-
-    .stats{display:flex;gap:10px;margin-top:12px}
-    .stat{background:var(--glass);padding:8px 12px;border-radius:10px;text-align:center;min-width:90px}
-
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#ef4444;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{margin:0;background:linear-gradient(180deg,#071026 0%,#071a2a 100%);color:#e6eef8}
+    header{padding:28px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;background:var(--glass);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin-top:8px}
+    .status-pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-weight:600}
+    /* schedule */
     .schedule{margin-top:12px}
-    .schedule ul{padding-left:18px;color:var(--muted)}
-
-    .side img{width:100%;height:220px;object-fit:cover;border-radius:10px}
-
-    .section{margin-top:16px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .player{background:var(--card);padding:12px;border-radius:10px;text-align:center}
-    .player img{width:100%;height:120px;object-fit:cover;border-radius:8px}
-
-    .tactics{display:flex;gap:12px;flex-wrap:wrap}
-    .tactics .col{flex:1 1 320px}
-
-    footer{margin-top:18px;color:var(--muted);text-align:center;font-size:13px}
-
-    @media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)} }
-    @media(max-width:520px){.grid{grid-template-columns:1fr}.logo{width:52px;height:52px}}
+    .match{display:flex;justify-content:space-between;padding:10px;border-radius:10px;background:rgba(255,255,255,0.01);margin-top:10px}
+    .match strong{display:block}
+    /* squad grid */
+    .squad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
+    .player{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));}
+    .player h4{margin:6px 0 2px}
+    .meta{color:var(--muted);font-size:13px}
+    .badge{display:inline-block;padding:6px 8px;border-radius:8px;font-weight:700;margin-top:8px}
+    .badge.ok{background:rgba(34,197,94,0.12);color:#9be6b8}
+    .badge.inj{background:rgba(239,68,68,0.09);color:#ffb4b4}
+    .training{display:flex;flex-direction:column;gap:10px}
+    .news-ticker{overflow:hidden;white-space:nowrap}
+    footer{padding:20px;text-align:center;color:var(--muted);margin-top:20px}
+    @media(max-width:880px){.hero{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden>
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" fill="white" opacity="0.1"/>
-            <path d="M6 12h12" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div>
-          <h1>Timnas Indonesia — Road to Ronde 4</h1>
-          <div class="sub">Perkembangan & Persiapan menuju Babak 4 Kualifikasi Piala Dunia FIFA 2026</div>
-        </div>
+  <header>
+    <div class="brand container">
+      <div class="logo">ID</div>
+      <div>
+        <div style="font-weight:800">Timnas Indonesia</div>
+        <div style="font-size:13px;color:var(--muted)">Persiapan Ronde 4 — Kualifikasi Piala Dunia</div>
       </div>
-      <nav>
-        <a href="#overview">Overview</a>
-        <a href="#squad">Skuad</a>
-        <a href="#schedule">Jadwal</a>
-        <a href="#preparation">Persiapan</a>
-      </nav>
-    </header>
+    </div>
+    <nav class="container" style="text-align:right">
+      <a href="#overview">Overview</a>
+      <a href="#squad">Skuad</a>
+      <a href="#training">Latihan</a>
+      <a href="#news">Berita</a>
+    </nav>
+  </header>
 
+  <main class="container">
     <section class="hero">
-      <div class="card overview" id="overview">
-        <h2>Ringkasan Singkat</h2>
-        <p>Halaman ini merangkum perkembangan Timnas Indonesia menjelang Babak 4 (Ronde 4) Kualifikasi Piala Dunia FIFA 2026—termasuk susunan grup, jadwal, perubahan staf teknis, dan fokus persiapan tim.</p>
+      <div class="card">
+        <h1 id="overview">Persiapan Ronde 4</h1>
+        <p class="lead">Halaman ini merangkum persiapan Timnas Indonesia untuk babak keempat kualifikasi Piala Dunia zona Asia: jadwal, skuad, kondisi pemain, dan rencana latihan.</p>
 
-        <div class="stats">
-          <div class="stat"><strong>Ronde 4</strong><span>8–14 Oktober 2025</span></div>
-          <div class="stat"><strong>Grup</strong><span>Group B — Saudi Arabia & Iraq</span></div>
-          <div class="stat"><strong>Pelatih</strong><span>Patrick Kluivert</span></div>
-        </div>
+        <div class="status-pill" style="margin-top:12px">Turnamen: Putaran 4 — 8–14 Oktober 2025 (lokasi terpusat)</div>
 
-        <div class="section schedule" id="schedule">
-          <h3>Jadwal Penting</h3>
-          <ul>
-            <li>Babak 4 AFC: 8–14 Oktober 2025.</li>
-            <li>Indonesia tergabung di Grup B bersama Arab Saudi dan Irak (undian 17 Juli 2025).</li>
-            <li>Pastikan update resmi PSSI untuk jam & lokasi pertandingan.</li>
-          </ul>
-        </div>
+        <section class="schedule" aria-label="Jadwal singkat">
+          <h3 style="margin-top:16px">Jadwal Singkat</h3>
+          <div class="match">
+            <div>
+              <strong>08 Okt 2025 — vs Arab Saudi</strong>
+              <div class="meta">Lokasi: Stadion terpusat (tuan rumah: Arab Saudi)</div>
+            </div>
+            <div class="meta">Kick-off: TBD</div>
+          </div>
+          <div class="match">
+            <div>
+              <strong>11 Okt 2025 — vs Irak</strong>
+              <div class="meta">Lokasi: Stadion terpusat (tuan rumah: Arab Saudi)</div>
+            </div>
+            <div class="meta">Kick-off: TBD</div>
+          </div>
 
-        <div class="section" id="news">
-          <h3>Perkembangan Terbaru</h3>
-          <p style="color:var(--muted)">Beberapa perubahan besar: pengangkatan Patrick Kluivert sebagai pelatih kepala pada Januari 2025 dan penunjukan penasihat teknis (tim pengarah) untuk memperkuat filosofi permainan dan pengembangan jangka panjang.</p>
-        </div>
+          <p style="margin-top:12px;color:var(--muted);font-size:14px">Catatan: jadwal dan lokasi berdasarkan pengumuman AFC dan media olahraga nasional.</p>
+        </section>
+
+        <section id="news" style="margin-top:16px">
+          <h3>Berita Terbaru</h3>
+          <div class="news-ticker card" style="padding:10px;margin-top:8px">
+            <div style="display:inline-block;padding-right:30px">• Squad 28 pemain diumumkan oleh PSSI.</div>
+            <div style="display:inline-block;padding-right:30px">• Timnas berkumpul di lokasi netral untuk pemusatan latihan awal.</div>
+            <div style="display:inline-block;">• Beberapa pemain mengalami masalah cedera/ketidaksiapan — monitoring terus dilakukan.</div>
+          </div>
+        </section>
       </div>
 
-      <aside class="card side">
-        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Timnas Indonesia latihan">
-        <div style="margin-top:12px">
-          <a class="btn" href="#squad" style="display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff8a65);color:#fff;text-decoration:none;font-weight:600">Lihat Skuad</a>
+      <aside style="position:relative">
+        <div class="card">
+          <h3 style="margin:0">Pelatih</h3>
+          <div style="margin-top:8px">
+            <strong>Patrick Kluivert</strong>
+            <div class="meta">Pelatih kepala — Strategi: fleksibel (prefer 4-3-3/variasi)</div>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+
+          <h4 style="margin:0">Ringkasan Taktik</h4>
+          <p class="meta" style="margin-top:8px">Menekankan transisi cepat, pressing area tengah, dan memanfaatkan pemain sayap untuk serangan balik.</p>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0">Lokasi Pemusatan</h4>
+          <p class="meta" style="margin-top:8px">Tim berkumpul di Saudi Arabia beberapa hari sebelum pertandingan untuk adaptasi lapangan dan iklim.</p>
+
+          <h4 style="margin-top:12px">Status Terpusat</h4>
+          <div class="meta">Skuad inti, staf medis, dan analis video melakukan sesi harian: recovery, latihan taktik, dan sesi video.</div>
         </div>
       </aside>
     </section>
 
-    <section class="card section" id="squad">
-      <h3>Skuad & Pemeriksaan Kesiapan</h3>
-      <p style="color:var(--muted)">Berikut contoh daftar pemain yang sering dipanggil selama kualifikasi—periksa rilis PSSI untuk daftar resmi terakhir.</p>
-      <div class="grid" style="margin-top:12px">
-        <div class="player"><img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Pemain 1"><strong>Nama Pemain A</strong><div style="color:var(--muted);font-size:13px">Posisi — Klub</div></div>
-        <div class="player"><img src="https://images.unsplash.com/photo-1540202404-5b68a8f0f1d9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Pemain 2"><strong>Nama Pemain B</strong><div style="color:var(--muted);font-size:13px">Posisi — Klub</div></div>
-        <div class="player"><img src="https://images.unsplash.com/photo-1508606572321-901ea443707f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0" alt="Pemain 3"><strong>Nama Pemain C</strong><div style="color:var(--muted);font-size:13px">Posisi — Klub</div></div>
+    <section id="squad" class="card" style="margin-top:18px">
+      <h2>Skuad (contoh tampilan)</h2>
+      <p class="meta">Daftar pemain disusun menurut posisi. Status pemain (OK / Cedera) bisa di-update oleh staf medis.</p>
+
+      <div class="squad-grid">
+        <!-- Example player cards; replace/extend sesuai pengumuman resmi PSSI -->
+        <div class="player">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <h4>Maarten Paes</h4>
+              <div class="meta">Kiper — Klub: (club)</div>
+            </div>
+            <div class="badge inj">Cedera</div>
+          </div>
+          <div class="meta">Catatan medis: dalam pemulihan (monitoring tim medis).</div>
+        </div>
+
+        <div class="player">
+          <h4>Emil Audero</h4>
+          <div class="meta">Kiper — Klub: (club)</div>
+          <div class="badge ok">Siap</div>
+        </div>
+
+        <div class="player">
+          <h4>Ole Romeny</h4>
+          <div class="meta">Penyerang — Klub: (club)</div>
+          <div class="badge ok">Siap</div>
+        </div>
+
+        <div class="player">
+          <h4>Ernando Ari</h4>
+          <div class="meta">Kiper — Klub: (club)</div>
+          <div class="badge ok">Siap</div>
+        </div>
+
+        <div class="player">
+          <h4>Ivar Jenner</h4>
+          <div class="meta">Gelandang — Klub: (club)</div>
+          <div class="badge inj">Tidak dipanggil / Cedera</div>
+        </div>
+
+        <!-- more player cards... -->
+      </div>
+
+      <p class="meta" style="margin-top:12px">Sumber data: pengumuman resmi PSSI dan laporan media. Halaman ini dibuat sebagai tata letak web statis yang mudah di-update.</p>
+    </section>
+
+    <section id="training" class="card" style="margin-top:18px">
+      <h2>Rencana Latihan & Recovery</h2>
+      <div class="training">
+        <div>
+          <strong>07:30 — Pemanasan & Mobilitas</strong>
+          <div class="meta">Durasi: 30-40 menit (dynamic warm-up, activation).</div>
+        </div>
+        <div>
+          <strong>10:00 — Latihan Taktik</strong>
+          <div class="meta">Sesi taktik, set-piece dan transisi (60–90 menit).</div>
+        </div>
+        <div>
+          <strong>16:00 — Recovery / Fisioterapi</strong>
+          <div class="meta">Ice bath, massage, pemulihan individual.</div>
+        </div>
       </div>
     </section>
 
-    <section class="card section" id="preparation">
-      <h3>Persiapan & Fokus Taktik</h3>
-      <div class="tactics">
-        <div class="col">
-          <h4>Latihan</h4>
-          <p style="color:var(--muted)">Program latihan berfokus pada ketahanan, pressing terorganisir, serta perbaikan transisi bertahan-ke-menyerang. Sesi video-analisis dan permainan uji coba direncanakan sebelum pertandingan babak 4.</p>
-        </div>
-        <div class="col">
-          <h4>Filosofi & Strategi</h4>
-          <p style="color:var(--muted)">Tim pelatih menekankan struktur pertahanan yang rapat dan kreativitas lini tengah untuk menekan tim-tim kuat seperti Arab Saudi dan Irak.</p>
-        </div>
-      </div>
-    </section>
+  </main>
 
-    <section class="card section" id="resources">
-      <h3>Sumber & Tautan Resmi</h3>
-      <p style="color:var(--muted)">Selalu cek PSSI, FIFA, dan media besar untuk konfirmasi skuad dan jadwal. Halaman ini adalah rangkuman edukatif, bukan rilis resmi.</p>
-    </section>
-
-    <footer>
-      <div>© 2025 TimnasID — Informasi ringkasan. Untuk fitur lanjut (live score, perbarui otomatis, tema terang), beri tahu saya.</div>
-    </footer>
-  </div>
+  <footer>
+    Dibuat untuk demo: situs statis informatif tentang Timnas Indonesia — update data resmi melalui PSSI dan media olahraga. 
+  </footer>
 </body>
 </html>

@@ -18,13 +18,12 @@
     h1{margin:0;font-size:28px}
     p.lead{color:var(--muted);margin-top:8px}
     .status-pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);font-weight:600}
-    /* schedule */
     .schedule{margin-top:12px}
     .match{display:flex;justify-content:space-between;padding:10px;border-radius:10px;background:rgba(255,255,255,0.01);margin-top:10px}
     .match strong{display:block}
-    /* squad grid */
     .squad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
     .player{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));}
+    .player img{width:100%;border-radius:8px;margin-bottom:8px}
     .player h4{margin:6px 0 2px}
     .meta{color:var(--muted);font-size:13px}
     .badge{display:inline-block;padding:6px 8px;border-radius:8px;font-weight:700;margin-top:8px}
@@ -33,7 +32,13 @@
     .training{display:flex;flex-direction:column;gap:10px}
     .news-ticker{overflow:hidden;white-space:nowrap}
     footer{padding:20px;text-align:center;color:var(--muted);margin-top:20px}
-    @media(max-width:880px){.hero{grid-template-columns:1fr}}
+    .lineup{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .lineup .pos{background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;text-align:center}
+    .lineup h4{margin:4px 0}
+    .tactic{margin-top:14px;display:flex;flex-direction:row;gap:16px;align-items:flex-start}
+    .tactic img{width:220px;border-radius:10px}
+    .tactic-text{flex:1}
+    @media(max-width:880px){.hero{grid-template-columns:1fr}.tactic{flex-direction:column}}
   </style>
 </head>
 <body>
@@ -48,6 +53,8 @@
     <nav class="container" style="text-align:right">
       <a href="#overview">Overview</a>
       <a href="#squad">Skuad</a>
+      <a href="#lineup">Line-up</a>
+      <a href="#tactic">Taktik</a>
       <a href="#training">Latihan</a>
       <a href="#news">Berita</a>
     </nav>
@@ -120,8 +127,8 @@
       <p class="meta">Daftar pemain disusun menurut posisi. Status pemain (OK / Cedera) bisa di-update oleh staf medis.</p>
 
       <div class="squad-grid">
-        <!-- Example player cards; replace/extend sesuai pengumuman resmi PSSI -->
         <div class="player">
+          <img src="https://via.placeholder.com/220x140?text=Maarten+Paes" alt="Maarten Paes">
           <div style="display:flex;align-items:center;justify-content:space-between">
             <div>
               <h4>Maarten Paes</h4>
@@ -133,33 +140,70 @@
         </div>
 
         <div class="player">
+          <img src="https://via.placeholder.com/220x140?text=Emil+Audero" alt="Emil Audero">
           <h4>Emil Audero</h4>
           <div class="meta">Kiper — Klub: (club)</div>
           <div class="badge ok">Siap</div>
         </div>
 
         <div class="player">
+          <img src="https://via.placeholder.com/220x140?text=Ole+Romeny" alt="Ole Romeny">
           <h4>Ole Romeny</h4>
           <div class="meta">Penyerang — Klub: (club)</div>
           <div class="badge ok">Siap</div>
         </div>
 
         <div class="player">
+          <img src="https://via.placeholder.com/220x140?text=Ernando+Ari" alt="Ernando Ari">
           <h4>Ernando Ari</h4>
           <div class="meta">Kiper — Klub: (club)</div>
           <div class="badge ok">Siap</div>
         </div>
 
         <div class="player">
+          <img src="https://via.placeholder.com/220x140?text=Ivar+Jenner" alt="Ivar Jenner">
           <h4>Ivar Jenner</h4>
           <div class="meta">Gelandang — Klub: (club)</div>
           <div class="badge inj">Tidak dipanggil / Cedera</div>
         </div>
-
-        <!-- more player cards... -->
       </div>
 
       <p class="meta" style="margin-top:12px">Sumber data: pengumuman resmi PSSI dan laporan media. Halaman ini dibuat sebagai tata letak web statis yang mudah di-update.</p>
+    </section>
+
+    <section id="lineup" class="card" style="margin-top:18px">
+      <h2>Prediksi Susunan Pemain vs Arab Saudi</h2>
+      <p class="meta">Formasi perkiraan 4-3-3 untuk laga tanggal 8 Oktober 2025.</p>
+      <div class="lineup">
+        <div class="pos"><h4>Kiper</h4><div class="meta">Emil Audero</div></div>
+        <div class="pos"><h4>Bek Tengah</h4><div class="meta">Jordi Amat</div></div>
+        <div class="pos"><h4>Bek Tengah</h4><div class="meta">Elkan Baggott</div></div>
+        <div class="pos"><h4>Bek Kanan</h4><div class="meta">Asnawi Mangkualam</div></div>
+        <div class="pos"><h4>Bek Kiri</h4><div class="meta">Pratama Arhan</div></div>
+        <div class="pos"><h4>Gelandang</h4><div class="meta">Marselino Ferdinan</div></div>
+        <div class="pos"><h4>Gelandang</h4><div class="meta">Thom Haye</div></div>
+        <div class="pos"><h4>Gelandang</h4><div class="meta">Rafael Struick</div></div>
+        <div class="pos"><h4>Sayap Kanan</h4><div class="meta">Witan Sulaeman</div></div>
+        <div class="pos"><h4>Sayap Kiri</h4><div class="meta">Shin Tae-yong Jr (placeholder)</div></div>
+        <div class="pos"><h4>Penyerang</h4><div class="meta">Ole Romeny</div></div>
+      </div>
+    </section>
+
+    <section id="tactic" class="card" style="margin-top:18px">
+      <h2>Prediksi Taktik Patrick Kluivert vs Arab Saudi</h2>
+      <div class="tactic">
+        <img src="https://via.placeholder.com/220x300?text=Taktik+Board" alt="Taktik Patrick Kluivert">
+        <div class="tactic-text">
+          <p class="meta">Diperkirakan Patrick Kluivert akan menurunkan formasi dasar 4-3-3 dengan fleksibilitas menjadi 4-2-3-1 saat bertahan. Strategi utama:</p>
+          <ul>
+            <li>Pressing ketat di lini tengah untuk memutus build-up Arab Saudi.</li>
+            <li>Mengandalkan kecepatan sayap (Witan, pemain sayap kiri) untuk serangan balik cepat.</li>
+            <li>Full-back (Asnawi & Arhan) diinstruksikan overlapping untuk mendukung serangan.</li>
+            <li>Target man Ole Romeny menjadi ujung tombak dengan suplai crossing dan umpan terobosan.</li>
+          </ul>
+          <p class="meta">Pendekatan ini fokus pada transisi cepat dan pemanfaatan kelemahan bek lawan di sisi sayap.</p>
+        </div>
+      </div>
     </section>
 
     <section id="training" class="card" style="margin-top:18px">
